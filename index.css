@@ -7,6 +7,8 @@ body {
   grid-template-columns: [inicio-col] 1fr [line1] 1fr [line3] 1fr [destacado-end] 1fr [line5] 1fr [destacado2-end] 1fr [line7] 1fr [final-col];
   height: 100vh;
   grid-gap: 5px;
+  grid-auto-flow: column; 
+  grid-auto-columns: 200px 50px 200px 1fr; 
 }
 .item {
   background: lightblue;
@@ -15,12 +17,12 @@ body {
 }
 .item:nth-of-type(1) {
   grid-column: inicio-col/destacado-end;
-  grid-row: inicio-row/ final-row;
+  grid-row: inicio-row / final-row;
 }
 .item:nth-of-type(2) {
   grid-column: destacado-end/destacado2-end;
-  grid-row: inicio-row/ final-row;
+  grid-row: inicio-row / final-row;
 }
 .item:nth-of-type(3) {
-  grid-column: destacado2-end/final-col;
+  grid-column: destacado2-end / final-col;
 }
