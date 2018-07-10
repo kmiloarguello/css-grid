@@ -3,12 +3,22 @@ body{
 }
 .container{
     display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 300px 300px;
+    /* grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 300px 300px; */
     grid-template: 300px 100px 100px / 25% 200px 25%;
 }
 .item{
     background: lightblue;
     padding: 10px;
     border: 1px solid red;
+}
+.item:nth-of-type(4){
+    background-color: blue;
+    overflow: auto;
+    /* display: subgrid; soon*/
+    /* Subgrid inside item */
+    display: grid;
+    grid-template: 300px 100px 100px / 25% 200px 25%;
+
+
 }
