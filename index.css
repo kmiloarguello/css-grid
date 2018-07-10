@@ -1,24 +1,35 @@
-body{
-    background: burlywood;
+body {
+  background: burlywood;
 }
-.container{
-    display: grid;
-    /* Fraction..
-    1 fr is a part of screen  */
+.container {
+  display: grid;
+  grid-template: 100px 1fr 150px / 200px 1fr;
+  grid-gap: 10px;
+  height: 100vh;
+  /* Grid area : header left content footer*/
+  grid-template-areas: "header header" "left content" "footer footer";
+}
+.item {
+  background: lightblue;
+  padding: 10px;
+  border: 1px solid red;
+}
+.item:nth-of-type(4) {
+  background-color: rgb(10, 10, 70);
+  overflow: auto;
+  display: grid;
+  grid-template: 300px 100px 100px / 25% 200px 25%;
+}
 
-    grid-template: 300px 100px 100px / repeat(4,minmax(200px, 1fr));
-    grid-gap: 30px 100px;
+.header{
+    grid-area: header;
 }
-.item{
-    background: lightblue;
-    padding: 10px;
-    border: 1px solid red;
+.left{
+    grid-area: left;
 }
-.item:nth-of-type(4){
-    background-color: blue;
-    overflow: auto;
-    /* display: subgrid; soon*/
-    /* Subgrid inside item */
-    display: grid;
-    grid-template: 300px 100px 100px / 25% 200px 25%;
+.content{
+    grid-area: content;
+}
+.footer{
+    grid-area: footer;
 }
